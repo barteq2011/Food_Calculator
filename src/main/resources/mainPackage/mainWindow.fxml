@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="borderPane" fx:id="mainBorderPane" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPackage.Controller">
+    <top>
+        <VBox>
+            <MenuBar fx:id="menuBar">
+                <Menu text="Menu">
+                    <MenuItem text="Help" onAction="#showHelpDialog"/>
+                    <MenuItem onAction="#handleAboutAppButton" text="About app" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleExitButton" style="-fx-text-fill:red;" text="Exit app" />
+                </Menu>
+            </MenuBar>
+            <HBox>
+                <Label prefHeight="31.0" prefWidth="45.0" text="Search:" textFill="white">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+                </Label>
+                <TextField fx:id="searchField" onKeyReleased="#handleSearch" prefHeight="19.0" prefWidth="100">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </HBox.margin>
+                </TextField>
+            </HBox>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="allProductsListView" maxHeight="480.0" prefHeight="458.0" prefWidth="180" styleClass="listClass" />
+    </left>
+    <center>
+        <GridPane styleClass="listClass" id="centerPane">
+            <padding>
+                <Insets left="10" />
+            </padding>
+            <Label fx:id="gramatureLabel" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Calories:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="caloriesLabel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Protein:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="proteinLabel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Carbo:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="carboLabel" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Fat:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="fatLabel" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <GridPane.margin>
+                    <Insets bottom="20" />
+                    <Insets top="20" />
+                </GridPane.margin>
+            </Label>
+        </GridPane>
+    </center>
+    <right>
+        <VBox>
+            <ListView fx:id="chosenListView" prefWidth="180" styleClass="listClass" />
+            <GridPane id="rightDowngridPane" prefWidth="180" styleClass="opacityClass">
+                <padding>
+                    <Insets left="10" />
+                </padding>
+                <Label text="Calories:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="caloriesField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Protein:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="proteinField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Carbo:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="carboField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label prefHeight="15.0" prefWidth="32.0" text="Fat:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="fatField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                        <Insets top="5" />
+                    </GridPane.margin>
+                </Label>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </VBox>
+    </right>
+</BorderPane>

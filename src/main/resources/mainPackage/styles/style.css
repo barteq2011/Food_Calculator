@@ -1,0 +1,21 @@
+#borderPane {
+    -fx-background-image: url("img/background.jpg");
+    -fx-background-size: 100% 100%;
+    -fx-opacity: 0.92;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+}
+.listClass {
+    -fx-background-color: #ffdb4d;
+    -fx-opacity: 0.92;
+}
+#rightDowngridPane {
+    -fx-opacity: 0.92;
+    -fx-background-color: #83e8f7;
+}
+.list-cell {
+    -fx-control-inner-background: #ffdb4d;
+}
+#centerPane {
+    -fx-background-color: #ffe680;
+}

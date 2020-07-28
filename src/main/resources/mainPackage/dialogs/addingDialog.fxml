@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mainPackage.AddingDialogController">
+    <content>
+        <GridPane style="-fx-font-family: Arial Bold">
+            <Label text="Amount (in grams):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="gramatureField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        </GridPane>
+    </content>
+</DialogPane>
